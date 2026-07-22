@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-black: #0D0D0D;
+    --bg-white: #F7F7F5;
+    --text-black: #0D0D0D;
+    --text-white: #F7F7F5;
+    --muted-black: #7A7A76;
+    --muted-white: #6B6B66;
+    --accent-red: #E31B23;
+  }
+
+  /* Strict Anti-Template Enforcement: 0px radius, no shadows, sharp geometry */
+  *, *::before, *::after {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    color: #F7F7F5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Anton', 'Archivo Black', impact, sans-serif;
+    letter-spacing: 0.015em;
+    line-height: 1.12;
+  }
+}
+
+/* Custom Typography Sizing for Giant Punchy Headlines - Spacious & Highly Readable */
+.hero-statement {
+  font-size: clamp(2.5rem, 6.5vw, 6.5rem);
+  line-height: 1.08;
+  letter-spacing: 0.015em;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: 'Anton', 'Archivo Black', sans-serif;
+}
+
+.section-statement {
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  line-height: 1.12;
+  letter-spacing: 0.015em;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: 'Anton', 'Archivo Black', sans-serif;
+}
+
+.card-title-statement {
+  font-size: clamp(1.35rem, 2.8vw, 2.4rem);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  font-family: 'Anton', 'Archivo Black', sans-serif;
+}
+
+/* Custom Scrollbar Stark Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #E31B23;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F7F7F5;
+}
+

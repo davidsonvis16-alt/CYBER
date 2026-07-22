@@ -1,0 +1,6 @@
+{
+  "name": "FlexFlares Cyber Services",
+  "description": "Fast, reliable, affordable, and professional eCitizen & ICT digital services in Kenya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
