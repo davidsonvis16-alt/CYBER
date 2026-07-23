@@ -1,9 +1,13 @@
 export type ServiceCategory = 
   | 'government'
-  | 'business'
-  | 'printing'
+  | 'online-applications'
+  | 'computer'
+  | 'internet'
   | 'design'
-  | 'ict';
+  | 'business'
+  | 'digital'
+  | 'academic'
+  | 'other';
 
 export interface ServiceItem {
   id: string;
