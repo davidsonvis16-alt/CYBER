@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ffLogo from '../assets/images/ff-logo.png';
+import ffLogoWhite from '../assets/images/ff-logo-white.png';
 
 interface NavbarProps {
   currentPage: string;
@@ -53,18 +55,25 @@ export const Navbar: React.FC<NavbarProps> = ({
             onPageChange('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="text-left cursor-pointer group"
+          className="text-left cursor-pointer group flex items-center gap-2"
         >
-          <span className="font-display text-2xl md:text-3xl tracking-wider uppercase font-black block leading-none">
-            FLEXFLARES
-          </span>
-          <span
-            className={`text-[10px] font-mono tracking-widest block uppercase font-bold mt-1 ${
-              isLightNav ? 'text-[#6B6B66]' : 'text-[#7A7A76]'
-            }`}
-          >
-            CYBER SERVICES • KENYA
-          </span>
+          <img
+            src={isLightNav ? ffLogo : ffLogoWhite}
+            alt="FlexFlares"
+            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+          />
+          <div>
+            <span className="font-display text-2xl md:text-3xl tracking-wider uppercase font-black block leading-none">
+              FLEXFLARES
+            </span>
+            <span
+              className={`text-[10px] font-mono tracking-widest block uppercase font-bold mt-1 ${
+                isLightNav ? 'text-[#6B6B66]' : 'text-[#7A7A76]'
+              }`}
+            >
+              CYBER SERVICES • KENYA
+            </span>
+          </div>
         </button>
 
         {/* DESKTOP LINKS */}
