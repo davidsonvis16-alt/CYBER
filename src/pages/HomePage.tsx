@@ -107,11 +107,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onPageChange, onOpenOrderMod
           </div>
           <div>
             <span className="text-[#7A7A76] block uppercase">COMPLETED REQUESTS</span>
-            <span className="font-display text-3xl text-[#F7F7F5] block">15,000+</span>
+            <span className="font-display text-3xl text-[#F7F7F5] block">---</span>
           </div>
           <div>
             <span className="text-[#7A7A76] block uppercase">ACCURACY RATE</span>
-            <span className="font-display text-3xl text-[#E31B23] block">99.8%</span>
+            <span className="font-display text-3xl text-[#E31B23] block">--%</span>
           </div>
           <div>
             <span className="text-[#7A7A76] block uppercase">WHATSAPP DESK</span>
