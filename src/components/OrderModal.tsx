@@ -22,7 +22,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const [phoneNumber, setPhoneNumber] = useState('');
   const [idNumber, setIdNumber] = useState('');
   const [notes, setNotes] = useState('');
-  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
   const [submittedRef, setSubmittedRef] = useState<string | null>(null);
 
   if (!isOpen) return null;
@@ -30,13 +29,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const handleServiceChange = (slug: string) => {
     const s = SERVICES_DATA.find((item) => item.slug === slug);
     if (s) setSelectedService(s);
-  };
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const fileNames = Array.from(e.target.files).map((f: File) => f.name);
-      setUploadedFiles((prev) => [...prev, ...fileNames]);
-    }
   };
 
   const generateWhatsAppMessage = () => {
@@ -52,7 +44,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 *SERVICE FEE:* KES ${selectedService.priceKes}
 *TURNAROUND:* ${selectedService.turnaroundTime}
 *NOTES:* ${notes || 'None'}
-*FILES ATTACHED:* ${uploadedFiles.length > 0 ? uploadedFiles.join(', ') : 'Will send via WhatsApp'}
 
 Please initiate my application immediately.`;
 
@@ -207,24 +198,6 @@ Please initiate my application immediately.`;
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* FILE ATTACHMENT */}
-            <div>
-              <label className="block font-mono text-xs uppercase text-[#7A7A76] mb-1 font-bold">
-                UPLOAD DOCUMENTS / PHOTOS (OPTIONAL)
-              </label>
-              <input
-                type="file"
-                multiple
-                onChange={handleFileUpload}
-                className="w-full bg-[#181818] border border-[#333330] text-[#7A7A76] text-xs font-mono p-2 cursor-pointer"
-              />
-              {uploadedFiles.length > 0 && (
-                <div className="mt-2 text-xs font-mono text-[#E31B23]">
-                  {uploadedFiles.length} file(s) attached: {uploadedFiles.join(', ')}
-                </div>
-              )}
             </div>
 
             {/* ACTION BUTTON */}
